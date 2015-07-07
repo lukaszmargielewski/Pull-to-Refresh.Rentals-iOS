@@ -14,6 +14,8 @@
                                       target:(id)target
                                refreshAction:(SEL)refreshAction;
 
+@property (nonatomic) CGFloat topInset;
+
 - (void)startRefreshing;
 
 - (void)endRefreshing;
