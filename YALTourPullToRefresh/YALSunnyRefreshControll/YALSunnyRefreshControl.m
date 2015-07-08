@@ -104,13 +104,12 @@ static const CGFloat DefaultScreenWidth = 320.f;
 }
 -(void)calculateShift{
 
-    [self setFrame:CGRectMake(0.f,
-                              self.topInset,
-                              self.scrollView.frame.size.width,
-                              self.scrollView.contentOffset.y)];
-    
     CGFloat coy = self.scrollView.contentOffset.y + self.topInset;
-    NSLog(@"coy: %.1f", coy);
+    
+    [self setFrame:CGRectMake(0.f,
+                              coy,
+                              self.scrollView.frame.size.width,
+                              ABS(coy))];
     
     if(coy <= -DefaultHeight){
         
